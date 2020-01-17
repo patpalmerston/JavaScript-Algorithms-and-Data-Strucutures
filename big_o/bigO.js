@@ -79,4 +79,4 @@
 // instructor.remove(value) // O(1)
 
 //Array are ordered lists
-let name = ['bla', 'bl', 'b'];
+// let name = ['bla', 'bl', 'b'];
