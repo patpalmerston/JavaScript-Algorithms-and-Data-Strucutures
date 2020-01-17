@@ -1,3 +1,5 @@
+// TIME COMPLEXITY
+
 // f(n) is linear (f(n) = n) - basically saying that the number of operations increased to what the value of n is. So n = n. Big O of n or O(n)
 // function addUp(n) {
 //   let total = 0;
@@ -45,3 +47,36 @@
 // }
 
 // console.log(addUp2(3))
+
+// SPACE COMPLEXITY
+
+// this example is O(1) space complexity.Not making new variables so it is constant.(the variable is still a single int and not an array or object that would grow and take up more space)
+// function sum(arr) {
+//   let total = 0;
+//   for(let i = 0; i < arr.length; i++) {
+//     total += arr[i];
+//   }
+//   return total
+// }
+
+// this example is making a new array and returns the new array. Array gets longer directly related to the size of input. so it would be O(n)
+// function double(arr) {
+//   let newArr = [];
+//   for (let i = 0; i < arr.length; i++) {
+//     newArr.push(2 * arr[i])
+//   }
+//   return newArr
+// }
+
+// Logarithmic
+
+// Object and Array Space Time Complexity
+// object = unOrder data structures all stored in key value pairs
+// O(1)
+// let instructor = {
+//   key: value
+// }
+// instructor.remove(value) // O(1)
+
+//Array are ordered lists
+let name = ['bla', 'bl', 'b'];
