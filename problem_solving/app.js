@@ -1,6 +1,6 @@
 // Problem solving examples
 
-// UNDERSTAND
+// STEP ONE ===== UNDERSTAND
 /*
 Write a function which takes two numbers and returns their sum
 
@@ -21,8 +21,7 @@ Write a function which takes two numbers and returns their sum
   num1 num2
 */
 
-
-// Explore concrete examples
+// STEP TWO ======= Explore concrete examples
 /*
 Write a function which takes in a string and returns counts of each character in the string
 
@@ -32,40 +31,73 @@ Write a function which takes in a string and returns counts of each character in
 // questions... do you want me to add a count for each char in the length?
 // or do you want me to just count what characters are used in the expression with no dubplicates?
 
-charCount('aaaa'); // {a:4}
-charCount('hello') // {h:1, e:2, l:3, l:4, o:5}
+// charCount('aaaa'); // {a:4}
+// charCount('hello') // {h:1, e:2, l:3, l:4, o:5}
 
 //3. progress to more complicated examples
 // do we need to account for spaces or other characters?
 // do we ignore casing or do we count upper and lowercases?
-charCount('Your PIN number is 1234') // {1:1, 2:1, 3:1, 4:1, b:1, e:1, i:2, m:1, n:2, etc....}
+// charCount('Your PIN number is 1234') // {1:1, 2:1, 3:1, 4:1, b:1, e:1, i:2, m:1, n:2, etc....}
 
 //4. Explore examples with empty inputs
-charCount('')
+// charCount('')
 
 //5. Explore example with invalid inputs
-charCount(function(){
+// charCount(function(){
 
-})
+// })
 
-
-// BREAK IT DOWN
+// STEP THREE ======= BREAK IT DOWN
 
 // Write a function which takes in a string and returns counts of each character in the string
 
 //1. Explicitly write out the steps you need to take.
-  // - this forces you to think about the code you'll write before you write it, and helps you catch any lingering conceptual issues or misunderstandings before you dive in and have to worry about details (e.g. language syntax) as well.
+// - this forces you to think about the code you'll write before you write it, and helps you catch any lingering conceptual issues or misunderstandings before you dive in and have to worry about details (e.g. language syntax) as well.
+
+// function charCount(str) {
+//   // do something
+//   // return an object with keys that are lowercase alphanumeric characters in the string; values should be the counts for those characters
+// }
+// function charCount(str) {
+//   // make object to return at end
+//   // loop over string, for each character...
+//     // if the char is a number/ letter AND is a key in object, add one to count
+//     // if the char is a number/letter AND not in object, add it and set value to 1
+//     // if character is something else (space, period, etc.) don't do anything
+
+//   // return object at end
+// }
+
+// STEP FOUR ======= SOLVE/SIMPLIFY
+/*
+- Solve The Problem..... but IF you CAN'T.... Solve a SIMPLER Problem
+    -SIMPLER
+      - if you know a place to start, go for it... 
+      - Find the core difficulty in what your trying to do
+      - Temporarily ignore that difficulty
+      - write a simplified solution
+      - Then incorporate that difficulty back in
+
+*/
 
 function charCount(str) {
-  // do something
-  // return an object with keys that are lowercase alphanumeric characters in the string; values should be the counts for those characters
-}
-function charCount(str) {
-  // make object to return at end
-  // loop over string, for each character...
-    // if the char is a number/ letter AND is a key in object, add one to count
-    // if the char is a number/letter AND not in object, add it and set value to 1
+    // make object to return at end
+    let result = {};
+    // loop over string, for each character...
+    for (let i = 0; i < str.length; i++) {
+        let char = str[i].toLowerCase();
+        // if the char is a number/ letter AND is a key in object, add one to count
+        if (result[char] > 0) {
+            result[char]++;
+        }
+        // if the char is a number/letter AND not in object, add it to object and set value to 1
+        else {
+            result[char] = 1;
+        }
+    }
     // if character is something else (space, period, etc.) don't do anything
-
-  // return object at end
+    // return object at end
+    return result; // still need to get rid of the alpha numeric
 }
+
+console.log(charCount('Hi There 1234!'));
