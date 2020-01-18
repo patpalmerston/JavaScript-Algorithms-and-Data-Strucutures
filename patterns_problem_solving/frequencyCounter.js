@@ -72,6 +72,38 @@ console.log(same2([1, 2, 3, 2], [9, 1, 4, 4]));
 Given two strings, write a function to determine if the second string is an anagram of the first. An anagram is a word, phrase or name formed by rearranging the letters of another, such as cinema, formed from iceman.
 */
 
+function validAnagram(str1, str2) {
+    // base case
+    // console.log(str1.length)
+    if (str1.length !== str2.length) {
+        return false;
+    }
+    // create an object for each parameter
+    let strObj = {};
+
+    for (let i = 0; i < str1.length; i++) {
+        let letter = str1[i];
+        // if letter exists, increment, otherwise set to 1. This will build the key value pairs so we can compare and de increment for every value that is succussfuly compared in the next loop.
+        strObj[letter] ? (strObj[letter] += 1) : (strObj[letter] = 1);
+    }
+
+    for (let i = 0; i < str2.length; i++) {
+        let letter = str2[i];
+        // can't find letter or letter is zero then its not an anagram
+        if (!strObj[letter]) {
+            console.log(strObj);
+            return false;
+        } else {
+            // if the str2 index is in the str1 index we de increment the strObj and if all field equal zero then the words match.
+            strObj[letter] -= 1;
+        }
+    }
+
+    console.log(strObj);
+
+    return true;
+}
+
 // validAnagram('', '') // true
 // validAnagram('aaz', 'zza') //false
 // validAnagram('anagram', 'nagaram') // true
