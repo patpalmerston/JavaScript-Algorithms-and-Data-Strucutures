@@ -61,7 +61,7 @@ function countUniqueValues(values) {
         // if first index does equal second index, the second index keeps loop unitl....first index does not match second index. At which case first index moves forward and then is given the value of second index
         if (values[i] !== values[j]) {
             i++;
-            // every time i moves foward it becomes j
+            // every time i moves forward it becomes j
             values[i] = values[j];
         }
         console.log(i, j);
