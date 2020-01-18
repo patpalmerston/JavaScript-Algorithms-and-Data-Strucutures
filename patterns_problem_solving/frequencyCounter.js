@@ -109,3 +109,52 @@ function validAnagram(str1, str2) {
 // validAnagram('', '') // true
 // validAnagram('aaz', 'zza') //false
 // validAnagram('anagram', 'nagaram') // true
+
+// TEST - sameFrequency
+/*
+Write a function called sameFrequency. Given two positive integers, find out if the two numbers have the same frequency of digits.
+
+Your solution MUST have the following complexitites
+
+Time:O(n)
+*/
+
+function sameFrequency(int1, int2) {
+    // need to compare each integer, so we can turn them into strings
+    let str1 = String(int1);
+    let str2 = String(int2);
+    // console.log(str1, str2)
+    // need to check if the length of strings is the same (base case)
+    if (str1.length !== str2.length) {
+        return false;
+    }
+    // need an object to keep track of the digit count
+    let intObj = {};
+    // will need to loop through the strings
+    for (let i = 0; i < str1.length; i++) {
+        // first loop will add to the object
+        let char = str1[i];
+        // if the char in obj exists add one, otherwise it equals one
+        intObj[char] ? (intObj[char] += 1) : (intObj[char] = 1);
+    }
+    //  console.log(intObj)
+
+    // second string will check to see if the values looped through are in the object
+    for (let i = 0; i < str2.length; i++) {
+        let char = str2[i];
+        // if they are not we return false
+        if (!intObj[char]) {
+            return false;
+        } else {
+            // if they are we decrement the key count
+            intObj[char] -= 1;
+        }
+    }
+
+    return true;
+}
+
+console.log(sameFrequency(182, 281));
+console.log(sameFrequency(34, 14));
+console.log(sameFrequency(3589578, 5879385));
+console.log(sameFrequency(22, 222));
