@@ -87,6 +87,8 @@ function validAnagram(str1, str2) {
         strObj[letter] ? (strObj[letter] += 1) : (strObj[letter] = 1);
     }
 
+    console.log(lookup);
+
     for (let i = 0; i < str2.length; i++) {
         let letter = str2[i];
         // can't find letter or letter is zero then its not an anagram
