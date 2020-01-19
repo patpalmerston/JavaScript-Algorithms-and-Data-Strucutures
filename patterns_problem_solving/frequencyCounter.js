@@ -158,3 +158,74 @@ console.log(sameFrequency(182, 281));
 console.log(sameFrequency(34, 14));
 console.log(sameFrequency(3589578, 5879385));
 console.log(sameFrequency(22, 222));
+
+//INSTRUCTOR SOLUTION
+// function sameFrequency(num1, num2){
+//     let strNum1 = num1.toString();
+//     let strNum2 = num2.toString();
+//     if(strNum1.length !== strNum2.length) return false;
+
+//     let countNum1 = {};
+//     let countNum2 = {};
+
+//     for(let i = 0; i < strNum1.length; i++){
+//       countNum1[strNum1[i]] = (countNum1[strNum1[i]] || 0) + 1
+//     }
+
+//     for(let j = 0; j < strNum1.length; j++){
+//       countNum2[strNum2[j]] = (countNum2[strNum2[j]] || 0) + 1
+//     }
+
+//     for(let key in countNum1){
+//       if(countNum1[key] !== countNum2[key]) return false;
+//     }
+
+//     return true;
+//   }
+
+// areThere Duplicates
+/*
+Implement a function called, areThereDuplicates which accepts a variable number of arguments, and checks whether there are any duplicates among the arguments passed in. You can solve this using the frequency counter pattern OR the multiple pointers pattern
+*/
+
+// MY SOLUTION
+
+function areThereDuplicates(...args) {
+    let input = { ...args };
+    if (input === {}) {
+        return false;
+    }
+    input = Object.values(input);
+
+    // console.log(input)
+    let newObj = {};
+
+    for (let i = 0; i < input.length; i++) {
+        let char = input[i];
+        newObj[char] ? (newObj[char] += 1) : (newObj[char] = 1);
+        // console.log(char)
+    }
+    newObj = Object.keys(newObj);
+    // console.log(newObj)
+    if (input > newObj) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+console.log(areThereDuplicates(1, 2, 3)); //false
+console.log(areThereDuplicates(1, 2, 2)); // true
+console.log(areThereDuplicates('a', 'b', 'c', 'a')); // true
+
+//INSTRUCTOR SOLUTION
+//   function areThereDuplicates() {
+//     let collection = {}
+//     for(let val in arguments){
+//       collection[arguments[val]] = (collection[arguments[val]] || 0) + 1
+//     }
+//     for(let key in collection){
+//       if(collection[key] > 1) return true
+//     }
+//     return false;
+//   }

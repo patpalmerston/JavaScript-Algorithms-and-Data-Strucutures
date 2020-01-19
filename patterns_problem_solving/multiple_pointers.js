@@ -74,3 +74,29 @@ countUniqueValues([1, 1, 1, 1, 1, 2]); //2
 countUniqueValues([1, 2, 3, 4, 4, 4, 7, 7, 12, 12, 13]); //7
 countUniqueValues([]); //0
 countUniqueValues([-2, -1, -1, 0, 1]); //4
+
+// areThere Duplicates
+/*
+Implement a function called, areThereDuplicates which accepts a variable number of arguments, and checks whether there are any duplicates among the arguments passed in. You can solve this using the frequency counter pattern OR the multiple pointers pattern
+*/
+
+// INSTRUCTOR SOLUTION 1
+// function areThereDuplicates(...args) {
+//     // Two pointers
+//     args.sort((a,b) => a > b);
+//     let start = 0;
+//     let next = 1;
+//     while(next < args.length){
+//       if(args[start] === args[next]){
+//           return true
+//       }
+//       start++
+//       next++
+//     }
+//     return false
+//   }
+
+//   // INSTRUCTOR SOLUTION 2
+//   function areThereDuplicates() {
+//     return new Set(arguments).size !== arguments.length;
+//   }
