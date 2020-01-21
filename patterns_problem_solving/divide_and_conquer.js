@@ -14,7 +14,7 @@
 //     return -1;
 // }
 
-// REFACTOR naive solution with a Binary search DIVIDE and CONQUER (Time Complexity - Log(n))
+// REFACTOR naive ssolution with a Binary search DIVIDE and CONQUER (Time Complexity - Log(n))
 function search(array, val) {
     let min = 0;
     let max = array.length - 1;
