@@ -23,3 +23,23 @@ A function that calls it self
     -   This is the most important concept to understand
 -   Different Input
     -   call function with data each time, has to change as it hits the stack, until it hits the base case.
+
+# Common issues with recursion
+
+-   No BASE CASE or BASE CASE is wrong
+-   Forgetting to return or returning the wrong thing!
+-   Stack overflow!
+
+# Helper Method Recursion
+
+-   an example of a non functioning helper method
+    function outer(input) {
+    let outerScopedVariable = []
+
+    function helper(helperInput) {
+    // modify the outerScopedVariable
+    helper(helperInput--)
+    }
+    helper(input)
+    return outerScopedVariable;
+    }
