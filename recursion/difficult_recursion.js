@@ -11,3 +11,23 @@
 // }
 
 // console.log(reverse('hello'))
+
+// PALINDROME
+// - Write a recursive function called isPalindrome which returns true if the string passed to it is palindrome (reads the same forward and backward). Otherwise it returns false
+
+function isPalindrome() {}
+
+console.log(isPalindrome('awesome')); //false
+console.log(isPalindrome('foobar')); //true
+
+// REPEAT STRING
+// function repeatStringNumTimes(str, num) {
+//   // we need to return the str equal to the size of num
+//   let newStr = ''
+//   // new variable for new string
+//   // loop to repeat the code as many times as num describes
+//   if(num < 1) return '';
+//   return str + repeatStringNumTimes(str, num -1)
+// }
+
+// console.log(repeatStringNumTimes("abc", 3));
