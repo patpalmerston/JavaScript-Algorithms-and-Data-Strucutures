@@ -97,8 +97,7 @@
 
 // console.log(collectOddValues([1, 2, 3, 4, 5, 6, 7, 8, 9]));
 
-
-// RECURSIVE CHALLENGE 
+// RECURSIVE CHALLENGE
 /*
 Write a function called power which accepts a base and an exponent. The function should return the power of the base to the exponent. This function should mimic the functionality of Math.pow() - do not worry about negative bases and exponents.
 */
@@ -108,13 +107,12 @@ Write a function called power which accepts a base and an exponent. The function
 //     return 1
 //   }
 //     return base * power(base, exp -1)
-  
+
 // }
 
 // console.log(power(2,0)) //1
 // console.log(power(2,2)) //4
 // console.log(power(2,4)) // 16
-
 
 // FACTORIAL CHALLENGE
 /**
@@ -130,43 +128,41 @@ Write a function called power which accepts a base and an exponent. The function
 //  console.log(factorial(2)) // 2
 //  console.log(factorial(4)) // 4
 
-// PRODUCT of ARRAY 
-  //- Write a function called productOfArray which takes in an array of numbers and returns the product of them all
-  // function productOfArray(arr) {
-  //   // console.log(count)
-  //   if(arr.length === 0) {
-  //     return 0
-  //   }
-  
-  //   return arr[0] + productOfArray(arr.slice(1))
-  // }
-  
-  // console.log(productOfArray([1,2,3,10])) //16
-  // console.log(productOfArray([1,2,3])) // 6
+// PRODUCT of ARRAY
+//- Write a function called productOfArray which takes in an array of numbers and returns the product of them all
+// function productOfArray(arr) {
+//   // console.log(count)
+//   if(arr.length === 0) {
+//     return 1
+//   }
 
-// Recursive Range 
-  //- Write a function called recursiveRange which accepts a number and adds up all the numbers from 0 to the number passed to the function
+//   return arr[0] * productOfArray(arr.slice(1))
+// }
 
-  // function recursiveRange(num) {
-  //   if(num === 0) return num;
-  //   return num + recursiveRange(num-1)
-  // }
-  
-  // console.log(recursiveRange(6)) //21
-  // console.log(recursiveRange(10)) //55
-  
+// console.log(productOfArray([1,2,3,10])) //60
+// console.log(productOfArray([1,2,3])) // 6
 
+// Recursive Range
+//- Write a function called recursiveRange which accepts a number and adds up all the numbers from 0 to the number passed to the function
 
-// FIB 
-  // - Write a recursive function called fib which accepts a number and returns the nth number in the fibonacci sequence. Recall that the Fibonacci sequence is the sequence of whole number 1,1,2,3,4,8, ... which starts with 1 and 1, and where every number thereafter is equal to the sum of the previous two numbers
+// function recursiveRange(num) {
+//   if(num === 0) return num;
+//   return num + recursiveRange(num-1)
+// }
 
-  // function fib(num) {
-  //   if(num <= 2) {
-  //     return 1
-  //   }
-  //   return fib(num-1) + fib(num -2)
-  // }
+// console.log(recursiveRange(6)) //21
+// console.log(recursiveRange(10)) //55
 
-  console.log(fib(4)) //3
-  console.log(fib(10)) //55
-  console.log(fib(28)) // 317811
+// FIB
+// - Write a recursive function called fib which accepts a number and returns the nth number in the fibonacci sequence. Recall that the Fibonacci sequence is the sequence of whole number 1,1,2,3,4,8, ... which starts with 1 and 1, and where every number thereafter is equal to the sum of the previous two numbers
+
+// function fib(num) {
+//   if(num <= 2) {
+//     return 1
+//   }
+//   return fib(num-1) + fib(num -2)
+// }
+
+console.log(fib(4)); //3
+console.log(fib(10)); //55
+console.log(fib(28)); // 317811
