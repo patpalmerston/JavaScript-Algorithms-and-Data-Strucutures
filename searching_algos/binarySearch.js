@@ -25,6 +25,7 @@ function binarySearch(arr, elem) {
         }
         middle = Math.floor((start + end) / 2);
     }
+    // arr[middle] === elem ? middle : -1
     if (arr[middle] == elem) {
         return middle;
     }
