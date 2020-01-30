@@ -8,15 +8,49 @@ BubbleSort Pseudocode
 
 // Naive Version
 
-// function swap(val1, val2) {
-//   return [val1, val2] = [val2, val1]
-// }
-
 // function bubbleSort(arr) {
 //   for(let i = 0; i < arr.length; i++) {
 //     for(let j = 0; j < arr.length; j++) {
+//        console.log(arr, arr[j], arr[j+1])
+//       if( arr[j] > arr[j+1]) {
+//         let temp = arr[j]
+//         arr[j] = arr[j+1]
+//         arr[j+1] = temp
+//       }
+//     }
+//   }
+//   return arr
+// }
+
+// console.log(bubbleSort([10, 17, 2, 1, 5, 4, 1, 3]))
+
+//Naive that elimates the extra call that returns undines
+// function bubbleSort(arr) {
+//   for(let i = arr.length; i > 0; i--) {
+//     for(let j = 0; j < i -1; j++) {
+//       console.log(arr, arr[j], arr[j+1])
 //       if( arr[j] > arr[j+1]) {
 //         [arr[j], arr[j+1]] = [arr[j+1], arr[j]]
+//       }
+//     }
+//   }
+//   return arr
+// }
+
+// console.log(bubbleSort([10, 17, 2, 1, 5, 4, 1, 3]))
+
+//Naive using the helper function
+// function bubbleSort(arr) {
+
+//   function swap(arr, idx1, idx2) {
+//     [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]]
+//   }
+
+//   for(let i = arr.length; i > 0; i--) {
+//     for(let j = 0; j < i -1; j++) {
+//       console.log(arr, arr[j], arr[j+1])
+//       if( arr[j] > arr[j+1]) {
+//         swap(arr, j, j +1)
 //       }
 //     }
 //   }
