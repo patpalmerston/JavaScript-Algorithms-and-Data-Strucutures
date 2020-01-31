@@ -8,7 +8,7 @@
     -Sorting movies based on release year
     -Sorting movies based on revenue
 
-# Bubble Sort
+# Bubble Sort - O(n2)
 
     - using pointers to compare index
     - swapping the largest index to the right until it become the last item
@@ -23,3 +23,6 @@
                   const swap = (arr, idx1, idx2) => {
                     [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]];
                   }
+
+# Selection Sort
+    - Similar to bubble sort, but instead of first placing large values into sorted position, it places small values into sorted position
