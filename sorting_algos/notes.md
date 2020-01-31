@@ -24,5 +24,11 @@
                     [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]];
                   }
 
-# Selection Sort
+# Selection Sort = bigO is O(n2) / generally not the best sort
+
     - Similar to bubble sort, but instead of first placing large values into sorted position, it places small values into sorted position
+    - only better than bubble sort if you want to minimize the number of swaps
+
+# Insertion Sort
+
+-
