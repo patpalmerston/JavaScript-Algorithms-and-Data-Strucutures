@@ -11,7 +11,7 @@
 -   There's a trade off between efficiency and simplicity
 -   The more efficient algorithms are much less simple, and generally take a longer to understand
 
-# Merge Sort - Divide and Conquer strategy
+# Merge Sort - Divide and Conquer strategy = all time cases O(n log n) / space is O(n)
 
 -   conceived in1948
 -   Its a combination of two things - merging and sorting!
@@ -32,3 +32,12 @@
 -   In order to implement merge sort, it's useful to first implement a function responsible for merging two sorted arrays
 -   Given two arrays which ar sorted, this helper function should create a new array which is also sorted and consists of all of the elements in the two input arrays
 -   This function should run O(n+m) time and O(n+m) space and should not modify the parameters passed to it.
+
+# Quick Sort = best / average O(log n) ... worst = O(n)
+  - Like merge sort, exploits the fact that arrays of 0 or 1 element are always sorted
+  - Works by selection one element (called the 'pivot') and finding the index where the pivot should end up in the sorted array
+  - One the pivot is positioned appropriately, quick sort can be applied on wither side of the pivot
+
+    # picking the PIVOT
+      - The runtime of the quick sort depends in part on how one selects the pivot
+      - Ideally, the pivot should be chosen so that it's roughly the median value in the data set you're sorting
