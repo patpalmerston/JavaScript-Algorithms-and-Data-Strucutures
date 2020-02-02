@@ -9,21 +9,21 @@ Insertion Sort Pseudocode
   -Repeat until the array is sorted
  */
 
-// function insertionSort(arr) {
-//   // we need to separate sorted side and unsorted
-//   // loop through unsorted
-//   for(let i = 1; i < arr.length; i++) {
-//     // find the currVal
-//     let currVal = arr[i];
-//     // declare 'j' to keep it within scope
-//     let j;
-//     // make another loop the works backwards from idx1, that is greater than equal to zero and only runs if j is greater than currVal
-//     for(j = i -1; i >= 0 && arr[j] > currVal; j--) {
-//       arr[j+1] = arr[j]
-//     }
-//     arr[j+1] = currVal
-//   }
-//   return arr
-// }
+function insertionSort(arr) {
+    // we need to separate sorted side and unsorted
+    // loop through unsorted
+    for (let i = 1; i < arr.length; i++) {
+        // find the currVal
+        let currVal = arr[i];
+        // declare 'j' to keep it within scope
+        let j;
+        // make another loop the works backwards from idx1, that is greater than equal to zero and only runs if j is greater than currVal
+        for (j = i - 1; i >= 0 && arr[j] > currVal; j--) {
+            arr[j + 1] = arr[j];
+        }
+        arr[j + 1] = currVal;
+    }
+    return arr;
+}
 
 // console.log(insertionSort([2,1,9,76,4]))
