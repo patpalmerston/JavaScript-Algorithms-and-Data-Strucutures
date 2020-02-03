@@ -43,7 +43,9 @@
       - Ideally, the pivot should be chosen so that it's roughly the median value in the data set you're sorting
 
 
-# Radix Sort
+# Radix Sort = all time complexities O(nk) / space O(n+k)
+              n - length of array
+              k - number of digits(average)
   - Radix sort is a special sorting algorithm that works on lists of numbers
   - It never makes comparisons between elements!
   - It exploits the fact that information about the size of a number is encoded in the number of digits
