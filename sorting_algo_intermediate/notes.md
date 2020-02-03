@@ -41,3 +41,17 @@
     # picking the PIVOT
       - The runtime of the quick sort depends in part on how one selects the pivot
       - Ideally, the pivot should be chosen so that it's roughly the median value in the data set you're sorting
+
+
+# Radix Sort
+  - Radix sort is a special sorting algorithm that works on lists of numbers
+  - It never makes comparisons between elements!
+  - It exploits the fact that information about the size of a number is encoded in the number of digits
+  - More digits means a bigger number!
+
+      # Helper Methods
+        - In order to implement radix sort, it's helpful to build a few helper functions first:
+        -Sort Helpers
+            -get Digit(num, place) - returns the digit in num at the given place value
+            -digitCount(num) - returns the number of digits in num
+            -mostDigits(nums) - Given an array of numbers, returns the number of digits in the largest numbers in the list
