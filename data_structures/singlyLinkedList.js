@@ -69,34 +69,40 @@ class SinglyLinkedList {
     }
 
     get(index) {
-        if(index < 0 || index >= this.length) return null;
+        if (index < 0 || index >= this.length) return null;
         let count = 0;
         let current = this.head;
-        while(count !== index) {
-          current = current.next;
-          count++
+        while (count !== index) {
+            current = current.next;
+            count++;
         }
         return current;
-      }
+    }
 
-      set(index, val) {
-        let foundNode = this.get(index)
-        if(foundNode) {
-          foundNode.val = val;
-          return true;
+    set(index, val) {
+        let foundNode = this.get(index);
+        if (foundNode) {
+            foundNode.val = val;
+            return true;
         }
         return false;
-      }
+    }
 
-      insert(index, val) {
-        if(index < 0 || index > this.length) return false;
-        if (index === this.length) return this.push(val);
-        if(index === 0) return this.unShift(val);
+    insert(index, val) {
+        if (index < 0 || index > this.length) return false;
+        if (index === this.length) {
+            this.push(val);
+            return true;
+        }
+        // double not will give us a boolean as well
+        if (index === 0) return !!this.unShift(val);
+
         let newNode = new Node(val);
+        let prev = this.get(index - 1);
         let temp = prev.next;
-        let prev = this.get(index -1);
+        prev.next = newNode;
         newNode.next = temp;
         this.length++;
-        return true
-      }
+        return true;
+    }
 }
