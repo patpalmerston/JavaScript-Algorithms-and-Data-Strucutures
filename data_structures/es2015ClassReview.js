@@ -39,3 +39,21 @@ console.log(firstStudent.markLate());
 console.log(firstStudent.markLate());
 console.log(firstStudent.markLate());
 console.log(firstStudent.calculateAverage());
+
+class Point {
+    constructor(x, y) {
+        this.x = x;
+        this.y = y;
+    }
+    // called on parent, not kids, distance between kids, is called from the parent
+    static distance(a, b) {
+        const dx = a.x - b.x;
+        const dy = a.y - b.y;
+
+        return Math.hypot(dx, dy);
+    }
+}
+
+const p1 = new Point(5, 5);
+const p2 = new Point(10, 10);
+console.log(Point.distance(p1, p2));
