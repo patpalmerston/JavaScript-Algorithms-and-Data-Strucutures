@@ -21,6 +21,13 @@
         -   A data structure that contains a head, tail and length property
         -   Linked Lists consist of nodes, and each node has a value and pointer to another node or null
 
+# Big O
+
+    - Insertion - O(1)
+    - Removal - O(1) or O(n)
+    - Searching O(n)
+    - Access O(n)
+
 # Comparisons with Arrays
 
     Lists
@@ -74,7 +81,7 @@
         - increment the length of the list by 1
         - Return the linked list
 
-# Get
+# Get = Big O / O(n)
 
     --Get pseudocode--
         - This function should accept an index
@@ -90,7 +97,7 @@
         - If the node is not found, return false
         - If the node is found, set the value of that node to be the value passed to the function and return true
 
-# Insert
+# Insert = Big O / O(1)
 
     -- Insert Pseudocode --
         - If the index is less than zero or greater than the length, return false
@@ -102,7 +109,7 @@
         - Increment the length
         - Return  true
 
-# Remove
+# Remove = Big O / O(1) or O(n)
 
     - Removing a node from the Linked List at a specific position
     -- Remove Pseudocode --

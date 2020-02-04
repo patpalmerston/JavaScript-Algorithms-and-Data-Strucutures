@@ -1,5 +1,5 @@
 //piece of data - value
-// reference to next node - next
+// reference to next node - next -
 
 class Node {
     constructor(val) {
