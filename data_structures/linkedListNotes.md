@@ -75,12 +75,14 @@
         - Return the linked list
 
 # Get
+
     --Get pseudocode--
         - This function should accept an index
         - If the index is less than zero or greater than or equal to the length of the list, return null
         - Loop through the list until you reach the index and return the node at the specific index
 
 # Set
+
     - Changing the value of a node based on it's position in the Linked List
     --Set pseudocode--
         - This function should accept a index and a value
@@ -89,6 +91,7 @@
         - If the node is found, set the value of that node to be the value passed to the function and return true
 
 # Insert
+
     -- Insert Pseudocode --
         - If the index is less than zero or greater than the length, return false
         - If the index is the same as the length, push a new node to the end of the list
@@ -98,3 +101,15 @@
         - Set the next property on the new node to be the previous next
         - Increment the length
         - Return  true
+
+# Remove
+
+    - Removing a node from the Linked List at a specific position
+    -- Remove Pseudocode --
+        - If the index is less than zero or greater than the length, return undefined
+        - If the index is the same as the length -1, pop
+        - If the index is 0, shift
+        - Otherwise, using the get method, access the node at the index -1
+        - Set the next property on that node to be the next of the next node
+        - Decrement the length
+        - Return the value of the node removed
