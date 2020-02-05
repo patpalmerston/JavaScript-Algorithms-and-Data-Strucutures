@@ -78,7 +78,7 @@ class SinglyLinkedList {
         }
         return current;
     }
-
+    // changing value(updating node)
     set(index, val) {
         let foundNode = this.get(index);
         if (foundNode) {
