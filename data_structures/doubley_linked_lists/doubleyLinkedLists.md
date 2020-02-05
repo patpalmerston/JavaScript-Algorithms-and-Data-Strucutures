@@ -84,3 +84,11 @@
 -If the index is greater than half the length of the list
 -Loop through the list starting from the tail and loop towards the middle
 -Return the node once it is found
+
+# Set - update the values content in the DDL
+
+-- Set Pseudocode --
+
+-   Create a variable which is the result of the get method at the index passed to the function
+    -   If the get method returns a valid node, set the value of that node to be the value passed to the function
+    -   Return true
