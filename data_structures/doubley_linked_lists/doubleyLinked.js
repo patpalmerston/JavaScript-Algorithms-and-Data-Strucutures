@@ -137,12 +137,3 @@ class DoublyLinkedList {
         return removedNode;
     }
 }
-
-let list = new DoublyLinkedList();
-list.push(0);
-list.push(1);
-list.push(2);
-list.push(3);
-list.push(4);
-list.push(5);
-list.push(6);
