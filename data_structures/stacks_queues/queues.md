@@ -7,6 +7,13 @@
 -Array
 -Custom Que Class
 
+# Big O of Queues
+
+insertion - O(1)
+removal - O(1)
+Searching - O(n)
+Access - O(n)
+
 # To add is
 
         -Enque- pseudocode
@@ -18,4 +25,16 @@
 
 # To remove is
 
-        -Deque
+        -Deque- pseudocode
+          -If there is no first property, just return null
+          -Store the first property in a variable
+          -See if the first is the same as the last(check if there is only 1 node). If so, set the first and last to be null
+          -If there is more than 1 node, set the first property to be the next property of first
+          -Decrement the size by 1
+          -Return the value of the node dequeued
+
+# Recap
+
+-   Queues are a FIFO data structure, all elements are first in first out.
+-   Queues are useful for processing tasks and are foundational for more complex data structures
+-   Insertion and Removal can be done in O(1)
