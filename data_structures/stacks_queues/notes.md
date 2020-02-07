@@ -35,3 +35,13 @@
       -Reset the first property to be the newly created node
       -Set the next property on the node to be the previously created variable
       -Increment the size of the stack by 1
+
+# Pop
+
+    -- POP Pseudocode --
+      -If there are no nodes in the stack, return null
+      -Create a temporary variable to stor the first property on the stack
+      -If there is only 1 node, set the first and last property to be null
+      -If there is more than one node, set the first property to be the next property on the current first
+      -Decrement the size by 1
+      -Return the value of the node removed

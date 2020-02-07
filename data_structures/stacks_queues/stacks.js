@@ -45,6 +45,24 @@ class Stack {
         this.size++;
         return newNode;
     }
+
+    pop() {
+        if (!this.first) return null;
+        let temp = this.first;
+        if (this.size === 1) {
+            this.first = null;
+            this.last = null;
+        } else {
+            this.first = temp.next;
+            temp.next = null;
+        }
+        this.size--;
+        return temp;
+    }
 }
 
 let stack = new Stack();
+stack.push('first index');
+stack.push('second index');
+stack.push('third index');
+stack.push('fourth index');
