@@ -40,5 +40,10 @@
 -   Push the value of the node to the variable that stores the values
 -   If the node has a left property, call the helper function with the left property on the node
 -   If the node ha s a right property, call the helper function with the right property on the node
-    -Invoke the helper function with the current variable
-    -Return the array of values
+
+-Invoke the helper function with the current variable
+-Return the array of values
+
+# DFS - PostOrder
+
+--Pseudocode--
