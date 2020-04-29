@@ -2,6 +2,9 @@
 
 -   unstructured
 
+A Wider tree, dfs will take less space, as were bfs stores the children node in a que.
+But with a deep but narrow tree, bfs with only store one node at a time so is preferred.
+
 # Two main ways to traversing a tree
 
     - Breadth-first Search(BFS)
