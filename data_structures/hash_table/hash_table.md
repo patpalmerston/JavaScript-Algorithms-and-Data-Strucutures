@@ -43,3 +43,8 @@ KEYS / VALUES
 
 -   Values
     -   Loops through the hash table array and returns an array of values in the table
+
+BIG O of Hash Tables
+-Insert: O(1)
+-Deletion: O(1)
+-Access: O(1)
