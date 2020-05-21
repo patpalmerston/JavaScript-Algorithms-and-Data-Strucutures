@@ -20,7 +20,35 @@ class HashTable {
         }
         return total;
     }
+
+    // set takes a new key:value and hashes it then places it in the hashtable with chainlinking method
+    set(key, value) {
+        // get the index value of the key
+        let index = this.hash(key);
+        // search the keymap to see if there is anything in that index if not insert empty array
+        if (!this.keyMap[index]) {
+            this.keyMap[index] = [];
+        }
+        // now by default we add an empty array for nesting, but if it already exists with a key:value we push the new key value into that nested array
+        this.keyMap[index].push([key, value]);
+    }
+
+    get(key) {}
 }
+
+/*
+pseudo code for Set
+    -Accepts a key and a value
+    -Hashes the key
+    -Stores the key-value pair in the hash table array via separate chaining
+
+pseudo code for Get
+    -Accepts a key
+    -Hashes the key
+    -Retrieves the key-value pair in the hash table
+    -If the key isn't found, returns undefined
+    -
+*/
 
 // // version 1, not O1
 // const hash = function (key, arrayLen) {
