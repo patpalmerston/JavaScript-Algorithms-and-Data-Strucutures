@@ -24,7 +24,7 @@ class HashTable {
     // set takes a new key:value and hashes it then places it in the hashtable with chainlinking method
     set(key, value) {
         // get the index value of the key
-        let index = this.hash(key);
+        let index = this._hash(key);
         // search the keymap to see if there is anything in that index if not insert empty array
         if (!this.keyMap[index]) {
             this.keyMap[index] = [];
@@ -33,7 +33,22 @@ class HashTable {
         this.keyMap[index].push([key, value]);
     }
 
-    get(key) {}
+    get(key) {
+        // get the hash of our key
+        let index = this._hash(key);
+        // check to see if there is an index with value at that index
+        if (this.keyMap[index]) {
+            // need to return sub array or child by looping through any values in the nested array
+            for (let i = 0; i < this.keyMap[index].length; i++) {
+                // if the keyMap nested items 'index' has an item '[i]' that has a key '[0]' that is equal to the key given
+                if (this.keyMap[index][i][0]) {
+                    // then return the 'value' or second item '[1]' / key:value
+                    return this.keyMap[index][i][1];
+                }
+            }
+        }
+        return undefined;
+    }
 }
 
 /*
