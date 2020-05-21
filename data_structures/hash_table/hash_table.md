@@ -34,3 +34,12 @@ There are many strategies for dealing with collision but wll focus on two;
     - Linear Probing
         - With linear probing, when we find a collision, we search through the array to find the next empty slot.
         - Unlike with separate chaining, this allows us to store a single key-value at each index
+
+KEYS / VALUES
+
+-   Keys
+
+    -   Loops through the hash table array and returns an array of keys in the table
+
+-   Values
+    -   Loops through the hash table array and returns an array of values in the table

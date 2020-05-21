@@ -49,8 +49,54 @@ class HashTable {
         }
         return undefined;
     }
-}
+    /// return all the keys from the hashtable, but be aware of duplicate keys
+    keys() {
+        let keysArr = [];
+        // loop over the entire keyMap
+        for (let i = 0; i < this.keyMap.length; i++) {
+            // is there anything of value in there?
+            if (this.keyMap[i]) {
+                // loop through the elements in the keymap
+                for (let j = 0; j < this.keyMap[i].length; j++) {
+                    // first we check for duplicates
+                    if (!keysArr.includes(this.keyMap[i][j][1])) {
+                        // inside the keyMap, access the nested array of key:value pairs '[i]', access the a nested array '[j]' that is a key:value pair, grab the key '[1]'
+                        keysArr.push(this.keyMap[i][j][1]);
+                    }
+                }
+            }
+        }
+        return keysArr;
+    }
 
+    // return all the values from the hashtable, but be aware of duplicate values
+    values() {
+        let valuesArr = [];
+        // loop over the entire keyMap
+        for (let i = 0; i < this.keyMap.length; i++) {
+            // is there anything of value in there?
+            if (this.keyMap[i]) {
+                // loop through the elements in the keymap
+                for (let j = 0; j < this.keyMap[i].length; j++) {
+                    // first we check for duplicates
+                    if (!valuesArr.includes(this.keyMap[i][j][0])) {
+                        // inside the keyMap, access the nested array of key:value pairs '[i]', access the a nested array '[j]' that is a key:value pair, grab the value '[0]'
+                        valuesArr.push(this.keyMap[i][j][0]);
+                    }
+                }
+            }
+        }
+        return valuesArr;
+    }
+}
+let ht = new HashTable();
+ht.set('pink', '#333');
+ht.set('grey', '#2222');
+ht.set('green', '#1111');
+ht.set('blue', '#1111');
+console.log(ht.get('green'));
+console.log(ht.values());
+console.log(ht.keys());
 /*
 pseudo code for Set
     -Accepts a key and a value
