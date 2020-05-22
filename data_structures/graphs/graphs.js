@@ -26,6 +26,11 @@ class Graph {
             return 'V2 already has that vertex listed';
         }
     }
+
+    removeEdge(v1, v2) {
+        this.adjacencyList[v1] = this.adjacencyList[v1].filter((x) => x !== v2);
+        this.adjacencyList[v2] = this.adjacencyList[v2].filter((x) => x !== v1);
+    }
 }
 
 let g = new Graph();
@@ -42,4 +47,10 @@ Pseudo Code for addEdge
   -The function should find the adjacency list the key of vertex and push vertex2 to the array
   -The function should find in the adjacency list the key of vertex2 and push vertex1 to the array
   = Don't worry about handling errors/invalid vertices
+
+Pseudo Code for removeEdge
+  -This function should accept two vertices, we'll call them vertx1 and vertex2
+  - The function should reassign the key of vertex1 to be an array that does not contain vertex2
+  - The function should reassign the key of vertex2 to be an array that does not contain vertex1
+  - Don't worry about handling errors/invalid vertices
 */
