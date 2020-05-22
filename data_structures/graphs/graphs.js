@@ -1,1 +1,8 @@
-console.log('graphs');
+//undirected graph
+class Graph {
+    constructor() {
+        this.adjacencyList = {};
+    }
+
+    add(name) {}
+}
