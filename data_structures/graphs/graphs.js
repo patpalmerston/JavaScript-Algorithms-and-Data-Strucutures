@@ -31,6 +31,17 @@ class Graph {
         this.adjacencyList[v1] = this.adjacencyList[v1].filter((x) => x !== v2);
         this.adjacencyList[v2] = this.adjacencyList[v2].filter((x) => x !== v1);
     }
+
+    removeVert(vertex) {
+        for (let vert in this.adjacencyList) {
+            if (this.adjacencyList[vert].includes(vertex)) {
+                this.adjacencyList[vert] = this.adjacencyList[vert].filter(
+                    (x) => x !== vertex
+                );
+            }
+        }
+        delete this.adjacencyList[vertex];
+    }
 }
 
 let g = new Graph();
@@ -53,4 +64,10 @@ Pseudo Code for removeEdge
   - The function should reassign the key of vertex1 to be an array that does not contain vertex2
   - The function should reassign the key of vertex2 to be an array that does not contain vertex1
   - Don't worry about handling errors/invalid vertices
+
+Pseudo Code for removeVertex
+  -The function should accept a vertex to remove
+  -The function should loop as long as there are any other vertices in the adjacency list that vertex
+  - INside of the loop, call our removeEdge function with the vertex we are removing and any values in the adjacency list for that vertex
+  -delete the key in the adjacency list for that vertex
 */
