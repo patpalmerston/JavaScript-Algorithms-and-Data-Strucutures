@@ -30,7 +30,7 @@ Types of Graphs(there are many but we focus on two)
     -   An array with nested arrays that list edges
     -   Or a hash table that has key value pairs. The key being the vertex and the value being an array listing the edges.
 
-BIG O
+BIG O - complexity
 
 -   Adjeacency List
     -   Can take up less space (in sparse graphs)
