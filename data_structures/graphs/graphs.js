@@ -33,20 +33,42 @@ class Graph {
     }
 
     removeVert(vertex) {
-        for (let vert in this.adjacencyList) {
-            if (this.adjacencyList[vert].includes(vertex)) {
-                this.adjacencyList[vert] = this.adjacencyList[vert].filter(
-                    (x) => x !== vertex
-                );
-            }
+        // my solution
+        // for (let vert in this.adjacencyList) {
+        //     if (this.adjacencyList[vert].includes(vertex)) {
+        //         this.adjacencyList[vert] = this.adjacencyList[vert].filter(
+        //             (x) => x !== vertex
+        //         );
+        //     }
+        // }
+        // delete this.adjacencyList[vertex];
+
+        // instructor solution
+        // while there is a length
+        while (this.adjacencyList[vertex].length) {
+            // pop off until 0 and then the loop will stop
+            const adjacentVertex = this.adjacencyList[vertex].pop();
+            // use the remove edge method to remove all edges of each adjacentVertex and the vertex passed into the current method
+            this.removeEdge(vertex, adjacentVertex);
         }
+        // delete the entire vertex key
         delete this.adjacencyList[vertex];
     }
 }
 
 let g = new Graph();
-g.addVertex('Tokyo');
-g.addVertex('Tokyo');
+g.addVertex('tokyo');
+g.addVertex('philly');
+g.addVertex('montero');
+
+g.addEdge('tokyo', 'philly');
+g.addEdge('philly', 'montero');
+g.addEdge('tokyo', 'montero');
+
+// g.removeEdge('tokyo', 'montero');
+// console.log(g);
+// g.removeVert('tokyo');
+// console.log('g', g);
 
 /*
 Pseudo Code for addVertex
