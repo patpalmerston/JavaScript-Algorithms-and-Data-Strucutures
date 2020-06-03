@@ -54,16 +54,41 @@ class Graph {
         // delete the entire vertex key
         delete this.adjacencyList[vertex];
     }
+
+    // Pseudo Code for recursive DFS
+    depthFirstRecursive(start) {
+        const result = [];
+        const visited = {};
+        const adjacencyList = this.adjacencyList;
+        (function dfs(vertex) {
+            if (!vertex) return null;
+            visited[vertex] = true;
+            result.push(vertex);
+            adjacencyList[vertex].forEach((neighbor) => {
+                if (!visited[neighbor]) {
+                    return dfs(neighbor);
+                }
+            });
+        })(start);
+        return result;
+    }
 }
 
 let g = new Graph();
-g.addVertex('tokyo');
-g.addVertex('philly');
-g.addVertex('montero');
+g.addVertex('A');
+g.addVertex('B');
+g.addVertex('C');
+g.addVertex('D');
+g.addVertex('E');
+g.addVertex('F');
 
-g.addEdge('tokyo', 'philly');
-g.addEdge('philly', 'montero');
-g.addEdge('tokyo', 'montero');
+g.addEdge('A', 'B');
+g.addEdge('A', 'C');
+g.addEdge('B', 'D');
+g.addEdge('C', 'E');
+g.addEdge('D', 'E');
+g.addEdge('D', 'F');
+g.addEdge('E', 'F');
 
 // g.removeEdge('tokyo', 'montero');
 // console.log(g);
@@ -92,4 +117,16 @@ Pseudo Code for removeVertex
   -The function should loop as long as there are any other vertices in the adjacency list that vertex
   - INside of the loop, call our removeEdge function with the vertex we are removing and any values in the adjacency list for that vertex
   -delete the key in the adjacency list for that vertex
+
+Pseudo Code for recursive DFS
+    -The function should accept a starting node
+    -Create a list to store eht ened result, to be returned at the very end
+    -Create an object to store visted vertices
+    -Create a helper function which accepts a vertex
+        -The helper function should return early if the vertex is empty
+        -The helper function should place the vertex it accepts into the visited object and push that vertex into the result array.
+        -Loop over all of the values in the adjacencyList for that vertex
+        -If any of those values have not been visited, recursively invoke the helper function with that vertex
+        -Return the results array
+
 */
