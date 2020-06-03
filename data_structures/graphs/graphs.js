@@ -80,6 +80,37 @@ class Graph {
     // for each neighbor in vertex's neighbors:
     //     if neighbor is not visited:
     //         recursively call DFS on neighbor
+
+    depthFirstIterative(start) {
+        const stack = [start];
+        const result = [];
+        const visited = {};
+        let currentVertex;
+
+        visited[start] = true;
+        while (stack.length) {
+            currentVertex = stack.pop();
+            result.push(currentVertex);
+
+            this.adjacencyList[currentVertex].forEach((neighbor) => {
+                if (!visited[neighbor]) {
+                    visited[neighbor] = true;
+                    stack.push(neighbor);
+                }
+            });
+        }
+        return result;
+    }
+
+    //DFS-iterative(start):
+    // let S be a stack
+    //S.push(start)
+    //While S is not empty
+    //vertex = S.pop()
+    //if vertex is not labeled as discovered:
+    //visit vertex (add to result list)
+    //label vertex as discovered
+    //for each of vertex's neighbors, N do S.push(N)
 }
 
 let g = new Graph();
@@ -136,5 +167,19 @@ Pseudo Code for recursive DFS
         -Loop over all of the values in the adjacencyList for that vertex
         -If any of those values have not been visited, recursively invoke the helper function with that vertex
         -Return the results array
+
+Pseudo Code DFS iterative
+    The function should accept a starting node
+    Create a stack to help us keep track of vertices (use a list/array)
+    Create a list to store the end result, to be returned at the very end
+    Create an object to store visited vertices
+    Add the starting vertex to the stack, and mark it visited
+    While the stack has something in it:
+        pop the next vertex from the stack
+        if that vertex hasn't been visted yet
+            -mark it as visited
+            -add it to the result list
+            -push all of it's neighbors into the stack
+    Return the result array
 
 */
