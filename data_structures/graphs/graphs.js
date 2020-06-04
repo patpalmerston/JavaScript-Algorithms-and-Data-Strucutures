@@ -89,6 +89,7 @@ class Graph {
 
         visited[start] = true;
         while (stack.length) {
+            console.log(stack);
             currentVertex = stack.pop();
             result.push(currentVertex);
 
@@ -181,5 +182,16 @@ Pseudo Code DFS iterative
             -add it to the result list
             -push all of it's neighbors into the stack
     Return the result array
+
+Pseudo Code
+    -This function should accept a starting vertex
+    -Create a queue (you can use an array) and place the starting vertex in it
+    -Create an array to store the nodes visited
+    -Mark the starting vertex as visited
+    -Loop as long as there is anything in the queue
+    -Remove the first vertex from the queue and push it into the array that stores nodes visited
+    -Loop over each vertex in the adjacency list for the vertex you are visiting
+    -If it is not inside the object that stores nodes visited, mark it as visited and enqueue that vertex
+    -once you have finished looping, return the array of visited nodes
 
 */
