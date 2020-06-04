@@ -112,6 +112,27 @@ class Graph {
     //visit vertex (add to result list)
     //label vertex as discovered
     //for each of vertex's neighbors, N do S.push(N)
+
+    breadthFirst(start) {
+        const queue = [start];
+        const result = [];
+        const visited = {};
+        let currentVertex;
+        visited[start] = true;
+
+        while (queue.length) {
+            currentVertex = queue.shift();
+            result.push(currentVertex);
+
+            this.adjacencyList[currentVertex].forEach((neighbor) => {
+                if (!visited[neighbor]) {
+                    visited[neighbor] = true;
+                    queue.push(neighbor);
+                }
+            });
+        }
+        return result;
+    }
 }
 
 let g = new Graph();
