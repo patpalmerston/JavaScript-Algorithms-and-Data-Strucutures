@@ -36,7 +36,7 @@ graph.addEdge('A', 'B', 9);
 graph.addEdge('B', 'C', 7);
 
 /*
-DIJKSTRA pseudo code
+DIJKSTRA pseudo code -
 
 -This function should accept a starting and ending vertex
 -Create an object (we'll call it distances) and set each key to be every vertex in the adjacency list with a value of infinity, except for the starting vertex which should have a value of 0.
