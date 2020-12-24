@@ -8,6 +8,7 @@ function fib(n) {
 console.log(fib(6));
 
 // solution with momization to optimize the repeated calls in fib recursion
+// memoizaiton
 function fib2(n, memo = []) {
     if (memo[n] !== undefined) return memo[n];
     if (n <= 2) return 1;
